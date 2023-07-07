@@ -1,0 +1,19 @@
+# default behavior for people who don't have core.autocrlf set.
+* text=auto
+
+# explicit LF normalization
+*.html      text diff=html
+*.css       text
+*.js        text
+*.json      text
+*.ts        text
+*.cs        text diff=csharp
+*.csproj    text merge=union
+*.sln       text merge=union eol=crlf
+*.xaml      text
+*.xml       text
+*.tt        text
+*.ps1       text
+*.cmd       text
+*.msbuild   text
+*.md        text
