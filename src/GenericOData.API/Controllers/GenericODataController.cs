@@ -14,16 +14,12 @@ namespace GenericODataAPI.Controllers
     [Route("api/[version]/[dataBase]/[entity]")]
     public class GenericOdataController<T> : ControllerBase where T : class
     {
-        private ILogger Logger { get; }
-
         private IDataService<T> _dataService { get; }
 
         public GenericOdataController(ILoggerFactory loggerFactory, IDataService<T> dataService)
         {
-            loggerFactory.Required(nameof(loggerFactory));
             dataService.Required(nameof(dataService));
-            this.Logger = loggerFactory.CreateLogger(nameof(GenericOdataController<T>));
-            _dataService = dataService;
+            this._dataService = dataService;
         }
 
         /// <summary>
